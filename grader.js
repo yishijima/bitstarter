@@ -69,7 +69,6 @@ var buildCallback = function(urlFile, checkFile) {
         if (result instanceof Error) {
             console.error("Error: " + util.format(response.message));
         } else {
-            console.error("Wrote %s", urlFile);
             fs.writeFileSync(urlFile, result);
             var checkJson = checkHtmlFile(urlFile, checkFile);
             var outJson = JSON.stringify(checkJson, null, 4);
